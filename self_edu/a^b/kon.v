@@ -4,7 +4,7 @@ module kon(
     output wire out 
 );
 
-assign out = (in_1 ^ in_2);
+assign out = (in_1 & in_2);
 
 endmodule
 
@@ -16,6 +16,9 @@ reg in_2 = 1'b0;
 
 always begin
     #1 in_1 = ~in_1;
+end
+
+always begin
     #2 in_2 = ~in_2;
 end
 
